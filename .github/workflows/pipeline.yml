@@ -27,13 +27,11 @@ jobs:
       
       - name: Clonar Repositorio
         run: cd ${{secrets.PATH}} && git clone https://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@github.com/Samuelcloud07/java-tomcat-maven-example.git
-      - name: entrar el projecto
-        run:  cd java-tomcat-maven-example
-      - name: test mvn 
-        run: mvn --version
- 
-      - name: build mvn
-        run: mvn clean install    
+      - name: entrar el projecto & build
+        run : |
+                cd cd ${{secrets.PATH}}/java-tomcat-maven-example
+                mvn clean package
+  
       - name: Pasar el war        
         run : |
                   cp java-tomcat-maven-example.war /usr/local/tomcat/webapps/

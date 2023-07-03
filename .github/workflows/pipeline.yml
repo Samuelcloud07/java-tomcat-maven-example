@@ -33,9 +33,6 @@ jobs:
           java-version: '17'
           distribution: 'adopt'
           
-      - name: Maven Artifact Download
-        uses: clausnz/github-action-download-maven-artifact@0.0.4
-
 
       - name: entrar el projecto & build
         run : |

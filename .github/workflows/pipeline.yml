@@ -32,7 +32,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
          distribution: adopt
-         java-version: 20
+         java-version: 11
          java-package: maven
          maven-version: 3.9.3
 

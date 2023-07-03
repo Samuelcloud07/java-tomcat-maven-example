@@ -31,7 +31,7 @@ jobs:
       - name: Configurar Maven
         uses: actions/setup-java@v2
         with:
-         java-version: '20.0.1'
+         java-version: '20'
          maven-version: '3.9.3'
 
       - name: entrar el projecto & build

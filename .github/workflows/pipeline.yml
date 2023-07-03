@@ -6,7 +6,7 @@ on:
 jobs:
   deploy-master:
     if: ${{ github.ref == 'refs/heads/master' }}
-    runs-on: ubuntu-lastest
+    runs-on: ubuntu-latest
     environment:
       name: 'main'
     steps:

@@ -32,9 +32,9 @@ jobs:
         uses: actions/setup-java@v2
         with:
          distribution: adopt
-         java-version: 11
+         java-version: 20
          java-package: maven
-         maven-version: 3.6.3
+         maven-version: 3.9.3
 
       - name: entrar el projecto & build
         run : |

@@ -27,6 +27,13 @@ jobs:
       
       - name: Clonar Repositorio
         run: cd ${{secrets.PATH}} && git clone https://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@github.com/Samuelcloud07/java-tomcat-maven-example.git
+
+      - name: Configurar Maven
+        uses: actions/setup-java@v2
+        with:
+         java-version: '20.0.1'
+         maven-version: '3.9.3'
+
       - name: entrar el projecto & build
         run : |
                 cd  ${{secrets.PATH}}/java-tomcat-maven-example

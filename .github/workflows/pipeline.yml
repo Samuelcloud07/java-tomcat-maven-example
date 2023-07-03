@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: instalar git
         run: sudo yum install git -y
+        
+      - name: Checkout del repositorio
+        uses: actions/checkout@v2
 
       - name: permisos en otra ruta
         run: chmod 777 /home/ec2-user/test && cd /home/ec2-user/test

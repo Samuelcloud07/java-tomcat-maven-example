@@ -29,7 +29,7 @@ jobs:
         run: cd ${{secrets.PATH}} && git clone https://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@github.com/Samuelcloud07/java-tomcat-maven-example.git
 
       - name: Configurar Maven
-        uses: actions/setup-java@v2
+        uses: actions/setup-java@v3
         with:
          distribution: adopt
          java-version: 11

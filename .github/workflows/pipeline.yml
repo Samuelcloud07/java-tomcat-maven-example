@@ -4,8 +4,8 @@ on:
     branches:
       - '*'
 jobs:
-  deploy-main:
-    if: ${{ github.ref == 'refs/heads/main' }}
+  deploy-master:
+    if: ${{ github.ref == 'refs/heads/master' }}
     runs-on: self-hosted
     environment:
       name: 'main'
@@ -20,7 +20,7 @@ jobs:
                 rm -rf project-java
                 rm -rf /usr/local/tomcat/webapps/project-java
       - name: Clonar Repositorio
-        run: git clone https://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@github.com/Samuelcloud07/project-java.git
+        run: git clone https://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@github.com/Samuelcloud07/java-tomcat-maven-example.git
       - name: instalar java
         run: pwd
       - name: inicie java service

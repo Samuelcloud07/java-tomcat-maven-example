@@ -29,7 +29,7 @@ jobs:
         run: cd ${{secrets.PATH}} && git clone https://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@github.com/Samuelcloud07/java-tomcat-maven-example.git
       - name: entrar el projecto & build
         run : |
-                cd cd ${{secrets.PATH}}/java-tomcat-maven-example
+                cd  ${{secrets.PATH}}/java-tomcat-maven-example
                 mvn clean package
   
       - name: Pasar el war        

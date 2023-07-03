@@ -13,20 +13,20 @@ jobs:
       #- name: instalar git
        # run: sudo yum install git -y
         
-      - name: Eliminar antes de clonar
-        run : rm -rf ${{secrets.PATH}} 
+     # - name: Eliminar antes de clonar
+     #   run : rm -rf ${{secrets.PATH}} 
         
-      - name: Crear carpeta con día y hora    
-        run: mkdir ${{secrets.PATH}} 
+    #  - name: Crear carpeta con día y hora    
+     #   run: mkdir ${{secrets.PATH}} 
         
-      - name: Ir a carpeta con día y hora
-        run: cd ${{secrets.PATH}}
+      #- name: Ir a carpeta con día y hora
+       # run: cd ${{secrets.PATH}}
 
-      - name: permisos en otra ruta
-        run: chmod 777 ${{secrets.PATH}}
+      #- name: permisos en otra ruta
+       # run: chmod 777 ${{secrets.PATH}}
       
       - name: Clonar Repositorio
-        run: cd ${{secrets.PATH}} && git clone https://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@github.com/Samuelcloud07/java-tomcat-maven-example.git
+        run:  git clone https://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@github.com/Samuelcloud07/java-tomcat-maven-example.git
 
       - name: Configurar Maven
         uses: actions/setup-java@v3
@@ -38,7 +38,7 @@ jobs:
 
       - name: entrar el projecto & build
         run : |
-                cd  ${{secrets.PATH}}/java-tomcat-maven-example
+                #cd  ${{secrets.PATH}}/java-tomcat-maven-example
                 mvn clean package
   
       - name: Pasar el war        

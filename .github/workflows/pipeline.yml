@@ -13,14 +13,17 @@ jobs:
       - name: instalar git
         run: sudo yum install git -y
         
-      - name: Checkout del repositorio
-        uses: actions/checkout@v2
+      - name: Crear carpeta con día y hora    
+        run: mkdir ${{secrets.PATH}} 
+        
+      - name: Ir a carpeta con día y hora
+        run: cd ${{secrets.PATH}}
 
       - name: permisos en otra ruta
-        run: chmod 777 /home/ec2-user/test && cd /home/ec2-user/test
+        run: chmod 777 ${{secrets.PATH}}
       - name: Eliminar carpetas
         run : |
-                rm -rf project-java
+                rm -rf ${{secrets.PATH}}
                 rm -rf /usr/local/tomcat/webapps/project-java
       - name: Clonar Repositorio
         run: git clone https://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@github.com/Samuelcloud07/java-tomcat-maven-example.git
@@ -30,7 +33,7 @@ jobs:
        # shell: bash
         run: mvn --version
       - name: change directori del projecto 
-        run: cd  /home/ec2-user/actions-runner/_work/project-java/project-java/project-java && sleep 20
+        run: cd  ${{secrets.PATH}} && sleep 20
       - name: build mvn
        # shell: bash
         run: mvn clean install    

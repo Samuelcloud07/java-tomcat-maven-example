@@ -36,7 +36,7 @@ jobs:
 
       - name: entrar el projecto & build
         run : |
-                cd  ${{secrets.PATH}}/java-tomcat-maven-example
+                cd  ${{secrets.PATH}}java-tomcat-maven-example
                 mvn clean package
   
       - name: Pasar el war        

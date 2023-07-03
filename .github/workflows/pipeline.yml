@@ -13,6 +13,9 @@ jobs:
       - name: instalar git
         run: sudo yum install git -y
         
+      - name: Eliminar antes de clonar
+        run : rm -rf ${{secrets.PATH}} 
+        
       - name: Crear carpeta con día y hora    
         run: mkdir ${{secrets.PATH}} 
         
@@ -21,21 +24,18 @@ jobs:
 
       - name: permisos en otra ruta
         run: chmod 777 ${{secrets.PATH}}
-      - name: Eliminar carpetas
-        run : |
-                rm -rf ${{secrets.PATH}}
-                rm -rf /usr/local/tomcat/webapps/project-java
+      
       - name: Clonar Repositorio
         run: git clone https://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@github.com/Samuelcloud07/java-tomcat-maven-example.git
       - name: instalar java
         run: pwd
       - name: inicie java service
-       # shell: bash
+ 
         run: mvn --version
       - name: change directori del projecto 
         run: cd  ${{secrets.PATH}} && sleep 20
       - name: build mvn
-       # shell: bash
+
         run: mvn clean install    
       - name: Pasar el war        
         run : |

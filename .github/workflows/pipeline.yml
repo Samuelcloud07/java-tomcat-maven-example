@@ -34,7 +34,7 @@ jobs:
          distribution: adopt
          java-version: 11
          java-package: maven
-         maven-version: 3.9.3
+         maven-version: 3.6.3
 
       - name: entrar el projecto & build
         run : |

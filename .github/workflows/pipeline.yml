@@ -1,0 +1,38 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - '*'
+jobs:
+  deploy-main:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: self-hosted
+    environment:
+      name: 'main'
+    steps:
+      - name: instalar git
+        run: sudo yum install git -y
+
+      - name: permisos en otra ruta
+        run: chmod 777 /home/ec2-user/test && cd /home/ec2-user/test
+      - name: Eliminar carpetas
+        run : |
+                rm -rf project-java
+                rm -rf /usr/local/tomcat/webapps/project-java
+      - name: Clonar Repositorio
+        run: git clone https://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@github.com/Samuelcloud07/project-java.git
+      - name: instalar java
+        run: pwd
+      - name: inicie java service
+       # shell: bash
+        run: mvn --version
+      - name: change directori del projecto 
+        run: cd  /home/ec2-user/actions-runner/_work/project-java/project-java/project-java && sleep 20
+      - name: build mvn
+       # shell: bash
+        run: mvn clean install    
+      - name: Pasar el war        
+        run : |
+                  cd /home/ec2-user/actions-runner/_work/project-java/project-java/project-java/target
+                  cp java-tomcat-maven-example.war /usr/local/tomcat/webapps/
+              

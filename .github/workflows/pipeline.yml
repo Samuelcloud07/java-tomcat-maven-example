@@ -6,24 +6,24 @@ on:
 jobs:
   deploy-master:
     if: ${{ github.ref == 'refs/heads/master' }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     environment:
       name: 'main'
     steps:
-      #- name: instalar git
-       # run: sudo yum install git -y
+      - name: instalar git
+        run: sudo yum install git -y
         
-     # - name: Eliminar antes de clonar
-     #   run : rm -rf ${{secrets.PATH}} 
+      - name: Eliminar antes de clonar
+        run : rm -rf ${{secrets.PATH}} 
         
-    #  - name: Crear carpeta con día y hora    
-     #   run: mkdir ${{secrets.PATH}} 
+      - name: Crear carpeta con día y hora    
+        run: mkdir ${{secrets.PATH}} 
         
-      #- name: Ir a carpeta con día y hora
-       # run: cd ${{secrets.PATH}}
+      - name: Ir a carpeta con día y hora
+        run: cd ${{secrets.PATH}}
 
-      #- name: permisos en otra ruta
-       # run: chmod 777 ${{secrets.PATH}}
+      - name: permisos en otra ruta
+        run: chmod 777 ${{secrets.PATH}}
       
       - name: Clonar Repositorio
         run:  git clone https://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@github.com/Samuelcloud07/java-tomcat-maven-example.git
@@ -36,7 +36,7 @@ jobs:
 
       - name: entrar el projecto & build
         run : |
-                cd java-tomcat-maven-example
+                cd  ${{secrets.PATH}}/java-tomcat-maven-example
                 mvn clean package
   
       - name: Pasar el war        

@@ -28,17 +28,15 @@ jobs:
       - name: Clonar Repositorio
         run:  git clone https://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@github.com/Samuelcloud07/java-tomcat-maven-example.git
 
-      - name: Configurar Maven
-        uses: actions/setup-java@v3
+      - uses: actions/setup-java@v3.3.0
         with:
-         distribution: adopt
-         java-version: 20
-         java-package: maven
-         maven-version: 3.9.3
+          java-version: '17'
+          distribution: 'adopt'
+          cache: gradle
 
       - name: entrar el projecto & build
         run : |
-                #cd  ${{secrets.PATH}}/java-tomcat-maven-example
+                cd java-tomcat-maven-example
                 mvn clean package
   
       - name: Pasar el war        

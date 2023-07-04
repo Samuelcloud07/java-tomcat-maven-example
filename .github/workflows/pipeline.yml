@@ -28,6 +28,13 @@ jobs:
       - name: Clonar Repositorio
         run:  git clone https://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@github.com/Samuelcloud07/java-tomcat-maven-example.git ${{secrets.PATH}}
 
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+      
       - name: entrar el projecto & build
         run : |
                 cd  /home/ec2-user/test/2023-07-03_19-48/java-tomcat-maven-example

@@ -13,6 +13,9 @@ jobs:
       - name: instalar git
         run: sudo yum install git -y
         
+      - name: instalar git
+        run: sudo yum install tar
+
       - name: Eliminar antes de clonar
         run : rm -rf ${{secrets.PATH}} 
         

@@ -35,11 +35,11 @@ jobs:
           distribution: 'temurin'
           cache: maven
           
-      - name: Set up Maven
-        uses: aahmed-se/setup-maven@v3
-        with:
-          maven-version: 3.6.1 
+      - name: Setup Maven Action
+        uses: s4u/setup-maven-action@v1.8.0
 
+      - name: version mvn
+        run: mvn -version
       
       - name: entrar el projecto & build
         run : |

@@ -31,8 +31,10 @@ jobs:
       - uses: actions/setup-java@v3.3.0
         with:
           java-version: '17'
-          distribution: 'adopt'
-          
+          distribution: 'temurin'
+          cache: maven
+      - name: Build with Maven
+        run : -B verify --file pom.xml 
 
       - name: entrar el projecto & build
         run : |

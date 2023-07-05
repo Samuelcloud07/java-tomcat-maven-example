@@ -44,9 +44,9 @@ jobs:
          #  maven-version: 3.6.1
           
       - name: Setup Maven Action
-        uses: aahmed-se/setup-maven@v3
+        uses: thermofisher/setup-maven@v1.0.0
         with:
-         maven-version: 3.6.1
+         maven-version: 3.8.2
          
       - name: version mvn
         run: mvn -version

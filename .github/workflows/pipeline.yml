@@ -44,8 +44,10 @@ jobs:
          #  maven-version: 3.6.1
           
       - name: Setup Maven Action
-        uses: s4u/setup-maven-action@v1.8.0
-
+        uses: aahmed-se/setup-maven@v3
+        with:
+         maven-version: 3.6.1
+         
       - name: version mvn
         run: mvn -version
       

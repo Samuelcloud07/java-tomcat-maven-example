@@ -40,9 +40,11 @@ jobs:
           cache: maven
       
       - name: Configurar el entorno
-        uses: actions/setup-act@v2
-        with:
-          platform: 'amazonlinux-latest'
+        uses: actions/setup-act@v3
+      #  with:
+       #   platform: 'amazonlinux-latest'
+      - name: Instalar tar
+        run: sudo yum install tar -y
         
       - name: Set up Maven
         uses: aahmed-se/setup-maven@v3

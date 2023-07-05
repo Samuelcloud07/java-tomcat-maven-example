@@ -10,11 +10,11 @@ jobs:
     environment:
       name: 'main'
     steps:
-      - name: instalar git
-        run: sudo yum install git -y
+      #- name: instalar git
+      #  run: sudo yum install git -y
         
-      - name: instalar tar
-        run: sudo yum install tar -y
+      #- name: instalar tar
+       # run: sudo yum install tar -y
 
       - name: Eliminar antes de clonar
         run : rm -rf ${{secrets.PATH}} 
@@ -43,8 +43,8 @@ jobs:
        # uses: actions/setup-act@v3
       #  with:
        #   platform: 'amazonlinux-latest'
-      - name: Instalar tar
-        run: sudo yum install tar -y
+      #- name: Instalar tar
+       # run: sudo yum install tar -y
         
       - name: Set up Maven
         uses: aahmed-se/setup-maven@v3

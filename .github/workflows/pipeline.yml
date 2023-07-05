@@ -5,7 +5,7 @@ on:
       - '*'
 jobs:
   deploy-master:
-    if: ${{ github.ref == 'refs/heads/master' }}
+   # if: ${{ github.ref == 'refs/heads/master' }}
     runs-on: self-hosted
     environment:
       name: 'main'

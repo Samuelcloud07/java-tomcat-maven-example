@@ -39,8 +39,8 @@ jobs:
           distribution: 'temurin'
           cache: maven
       
-      - name: Configurar el entorno
-        uses: actions/setup-act@v3
+      #- name: Configurar el entorno
+       # uses: actions/setup-act@v3
       #  with:
        #   platform: 'amazonlinux-latest'
       - name: Instalar tar
